@@ -7,8 +7,9 @@ export const clientsRoute = Router();
 clientsRoute.post("/", async (req, res) => {
   const facade = ClientAdmFacadeFactory.create();
   try {
-    const { name, email, document, address } = req.body;
+    const { id, name, email, document, address } = req.body;
     await facade.add({
+      id,
       name,
       email,
       document,
